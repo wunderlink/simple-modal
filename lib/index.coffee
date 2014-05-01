@@ -6,7 +6,6 @@ module.exports = (opts={}) ->
   modal = new ModalStyle(opts)
   return modal
 
-
 template = require './modal.jade'
 
 
@@ -25,6 +24,7 @@ class ModalStyle
     ]
     clickOutsideToClose: true
     removeOnClose: true
+    attachToBody: true
   
   constructor: (o) ->
     self = this
@@ -33,6 +33,7 @@ class ModalStyle
       @opts[opt] = val
   
     @m = document.createElement 'div'
+    @m.className = 'modal-styled-holder'
     @m.innerHTML = template(@opts)
 
     c = @m.querySelector '.ms-content'
@@ -57,6 +58,11 @@ class ModalStyle
       bg = @m.querySelector '.ms-overlay'
       bg.onclick = ->
         self.close()
+
+    if @opts.attachToBody
+      document.body.appendChild @m
+
+    @show()
 
   deconstruct: ->
     @m.parentNode.removeChild @m
