@@ -1,15 +1,15 @@
 {
-  "name": "modal-style",
+  "name": "modal-styled",
   "version": "0.0.0",
-  "description": "Implements modal.js (https://github.com/bengourley/modal.js) and adds a standard modal styling.",
+  "description": "Somewhat based on modal.js (https://github.com/bengourley/modal.js)",
   "main": "index.js",
   "scripts": {
-    "example": "beefy example/basic.js --live -- -t jadeify",
+    "example": "beefy example/basic.js --live",
     "test": "testling"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/wunderlink/modal-style.git"
+    "url": "https://github.com/wunderlink/modal-styled.git"
   },
   "devDependencies": {
     "browserify": "~2.35.1",
@@ -38,9 +38,9 @@
     ]
   },
   "bugs": {
-    "url": "https://github.com/wunderlink/modal-style/issues"
+    "url": "https://github.com/wunderlink/modal-styled/issues"
   },
-  "homepage": "https://github.com/wunderlink/modal-style",
+  "homepage": "https://github.com/wunderlink/modal-styled",
   "testling": {
     "files": "test/*.js",
     "browsers": [
