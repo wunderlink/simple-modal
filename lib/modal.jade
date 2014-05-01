@@ -1,0 +1,9 @@
+.ms-overlay
+.ms-body
+  if( title )
+    h1.ms-title #{title}
+  .ms-content
+  if( buttons.length )
+    .ms-controls
+      each button in buttons
+        button.btn.ms-btn(class=button.className) #{button.text}

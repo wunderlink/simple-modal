@@ -4,22 +4,54 @@
   "description": "Implements modal.js (https://github.com/bengourley/modal.js) and adds a standard modal styling.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "example": "beefy example/basic.js --live -- -t jadeify",
+    "test": "testling"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/wunderlink/modal-style.git"
   },
+  "devDependencies": {
+    "browserify": "~2.35.1",
+    "coffee-script": "~1.6.3",
+    "beefy": "~0.4.2",
+    "tape": "^2.12.1",
+    "testling": "^1.6.1",
+    "jade": "~1.3.1"
+  },
+  "dependencies": {
+    "coffeeify": "~0.5.2",
+    "jadeify": "~2.1.1",
+    "cssify": "~0.4.1"
+  },
   "keywords": [
     "modal"
   ],
-  "author": "Wunderlink",
-  "license": "ISC",
+  "author": "Tyler Bushnell",
+  "license": "BSD",
+  "browser": "./lib/index.coffee",
+  "browserify": {
+    "transform": [
+      "coffeeify",
+      "jadeify",
+      "cssify"
+    ]
+  },
   "bugs": {
     "url": "https://github.com/wunderlink/modal-style/issues"
   },
   "homepage": "https://github.com/wunderlink/modal-style",
-  "dependencies": {
-    "modal": "~0.2.0"
+  "testling": {
+    "files": "test/*.js",
+    "browsers": [
+      "ie/6..latest",
+      "chrome/22..latest",
+      "firefox/16..latest",
+      "safari/latest",
+      "opera/11.0..latest",
+      "iphone/6",
+      "ipad/6",
+      "android-browser/latest"
+    ]
   }
 }
