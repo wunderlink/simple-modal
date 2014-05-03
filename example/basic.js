@@ -1,47 +1,111 @@
-require('cssify').byUrl('//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css')
 
+require('./style.css');
 var template = require('./template.jade');
 
 var modalStyle = require('../index.js');
 
-document.body.style.margin = '30px';
 document.body.innerHTML = template();
 
-var opts = {
-  title: '',
-  content: 'Put your content here.<p>Maybe even some paragraphs.</p>',
-  clickOutsideToClose: true,
-  removeOnClose: false
-  };
 
+var actionResult = document.querySelector('.actionResult');
 
-var btn = document.querySelector('.launch-btn');
+var btn = document.querySelector('.launch-d-btn');
 var modal;
 
 btn.onclick = function(e){
+  actionResult.innerHTML = '';
+  var opts = {
+    title: 'Deconstruct-a-Modal',
+    content: 'This modal will be deconstructed upon close',
+    clickOutsideToClose: true,
+    removeOnClose: true
+    };
   modal = modalStyle( opts );
-  document.body.appendChild( modal.m );
+}
+
+
+
+
+var btn = document.querySelector('.launch-h-btn');
+btn.onclick = function(e){
+  actionResult.innerHTML = '';
+  var opts = {
+    title: 'Hide-a-Modal',
+    content: 'This modal will be hidden upon close',
+    clickOutsideToClose: true,
+    removeOnClose: false
+    };
+  modal = modalStyle( opts );
+}
+
+
+var btn = document.querySelector('.launch-q-btn');
+btn.onclick = function(e){
+  actionResult.innerHTML = '';
+  var opts = {
+    title: 'Try A Callback',
+    content: 'This passes a callback on the button so that we may fooify the green box',
+    buttons: [
+      {
+      text: 'Do The Foo',
+      callback: function() {
+        actionResult.innerHTML = 'foo';
+        }
+      }
+    ],
+    clickOutsideToClose: true,
+    removeOnClose: false
+    };
+  modal = modalStyle( opts );
+}
+
+
+var btn = document.querySelector('.launch-n-btn');
+btn.onclick = function(e){
+  actionResult.innerHTML = '';
+  var opts = {
+    title: 'Multipage Modal',
+    content: 'First page',
+    buttons: [
+      {
+      text: 'Cancel',
+      },
+      {
+      text: 'Next',
+      closeOnClick: false,
+      callback: function() {
+        new_modal = modalStyle();
+        }
+      }
+    ],
+    clickOutsideToClose: true,
+    removeOnClose: false
+    };
+  modal = modalStyle( opts );
 }
 
 
 var btnShow = document.querySelector('.show-btn');
 btnShow.onclick = function(e){
 	console.log(modal);
+  actionResult.innerHTML = '';
 	if( typeof(modal) == 'undefined' || typeof(modal.m) == null || modal.m == null ){
-    alert('the modal does not exist');
+    actionResult.innerHTML = 'the modal does not exist';
   } else {
     modal.show();
   }
 }
 
 
-var btnDestroy = document.querySelector('.destroy-btn');
-btnDestroy.onclick = function(e){
+var btnDeconstruct = document.querySelector('.destroy-btn');
+btnDeconstruct.onclick = function(e){
+  actionResult.innerHTML = '';
 	if( typeof(modal) == 'undefined' || typeof(modal.m) == null || modal.m == null ){
-    alert('the modal does not exist');
+    actionResult.innerHTML = 'the modal does not exist';
   } else {
     modal.deconstruct();
   }
 }
+
 
 
