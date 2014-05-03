@@ -1,9 +1,9 @@
-.ms-overlay
-.ms-body
+.modal-styled-overlay
+.modal-styled-body
   if( title )
-    h1.ms-title #{title}
-  .ms-content
+    h1.modal-styled-title #{title}
+  .modal-styled-content
   if( buttons.length )
-    .ms-controls
+    .modal-styled-controls
       each button in buttons
-        button.btn.ms-btn(class=button.className) #{button.text}
+        button.btn.modal-styled-btn(class=button.className) #{button.text}

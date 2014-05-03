@@ -1,6 +1,6 @@
 
 
-.ms-body {
+.modal-styled-body {
   position: fixed;
   top: 10%;
   left: 50%;
@@ -22,26 +22,26 @@
   padding: 20px;
 }
 
-.ms-title {
+.modal-styled-title {
   margin: 0px 0px 0px 0px;
   padding-bottom: 5px;
   border-bottom: 1px solid #eee;
 }
 
-.ms-content {
+.modal-styled-content {
   margin: 15px 0px 15px 0px;
 }
 
-.ms-btn {
+.modal-styled-btn {
   margin: 5px;
 }
 
-.ms-controls {
+.modal-styled-controls {
   text-align: right;
 }
 
 
-.ms-overlay {
+.modal-styled-overlay {
   opacity: 0.8;
   position: fixed;
   top: 0;
