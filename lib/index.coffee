@@ -13,7 +13,7 @@ class ModalStyle
   constructor: (o) ->
     @m = {}
     @opts =
-      title: 'Wait!'
+      title: ''
       content: 'What would you like to do?'
       buttons: [
         text: 'Cancel'
