@@ -45,6 +45,7 @@ Show the modal.
 
 ### Properties
 theModal.m - the DOM object. If you set attachToBody=false, then you could instead do: div.appendChild(theModal.m);
+
 theModal.opts - the options you passed in upon invoking the modal, plus any defaults that you did not pass in your options.
 
 ### Note
