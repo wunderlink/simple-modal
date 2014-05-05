@@ -1,6 +1,6 @@
 {
   "name": "modal-styled",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Somewhat based on modal.js (https://github.com/bengourley/modal.js)",
   "main": "index.js",
   "scripts": {
