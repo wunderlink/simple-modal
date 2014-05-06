@@ -1,7 +1,7 @@
 {
   "name": "simple-modal",
   "version": "0.0.4",
-  "description": "Somewhat based on modal.js (https://github.com/bengourley/modal.js)",
+  "description": "A basic modal with no hidden dependencies",
   "main": "index.js",
   "scripts": {
     "example": "beefy example/basic.js --live",
