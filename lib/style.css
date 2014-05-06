@@ -1,6 +1,6 @@
 
 
-.modal-styled-body {
+.simple-modal-body {
   position: fixed;
   top: 10%;
   left: 50%;
@@ -22,26 +22,26 @@
   padding: 20px;
 }
 
-.modal-styled-title {
+.simple-modal-title {
   margin: 0px 0px 0px 0px;
   padding-bottom: 5px;
   border-bottom: 1px solid #eee;
 }
 
-.modal-styled-content {
+.simple-modal-content {
   margin: 15px 0px 15px 0px;
 }
 
-.modal-styled-btn {
+.simple-modal-btn {
   margin: 5px;
 }
 
-.modal-styled-controls {
+.simple-modal-controls {
   text-align: right;
 }
 
 
-.modal-styled-overlay {
+.simple-modal-overlay {
   opacity: 0.8;
   position: fixed;
   top: 0;

@@ -1,4 +1,4 @@
-# modal-styled
+# simple-modal
 
 A module to create a modal. The purpose of this module is to have an easy to use modal that does not have any hidden dependencies (no jQuery!), and features a few useful options.
 

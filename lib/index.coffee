@@ -45,12 +45,12 @@ class ModalStyle
     self = this
 
     @m = document.createElement 'div'
-    @m.className = 'modal-styled-holder'
+    @m.className = 'simple-modal-holder'
     @m.innerHTML = template(@opts)
 
     @updateContent @opts.content
   
-    controls = @m.querySelectorAll '.modal-styled-controls>button'
+    controls = @m.querySelectorAll '.simple-modal-controls>button'
     for b, i in controls
       if @opts.buttons[i]?
         item = @opts.buttons[i]
@@ -70,7 +70,7 @@ class ModalStyle
               self.close()
   
     if @opts.clickOutsideToClose
-      bg = @m.querySelector '.modal-styled-overlay'
+      bg = @m.querySelector '.simple-modal-overlay'
       bg.onclick = ->
         self.close()
 
@@ -80,7 +80,7 @@ class ModalStyle
     @show()
 
   updateContent: (new_content) ->
-    c = @m.querySelector '.modal-styled-content'
+    c = @m.querySelector '.simple-modal-content'
     if typeof new_content == 'string'
       c.innerHTML = new_content
     else
