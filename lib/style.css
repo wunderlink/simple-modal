@@ -5,7 +5,6 @@
   top: 10%;
   left: 50%;
   z-index: 1051;
-  width: 560px;
   margin-left: -280px;
   background-color: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.3);
@@ -30,6 +29,7 @@
 
 .simple-modal-content {
   margin: 15px 0px 15px 0px;
+  overflow: auto;
 }
 
 .simple-modal-btn {
