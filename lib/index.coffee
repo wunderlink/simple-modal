@@ -93,12 +93,23 @@ class ModalStyle
 
     @show()
 
-  updateContent: (new_content) ->
+  updateContent: (new_content, replace_existing = true) ->
     c = @m.querySelector '.simple-modal-content'
+    if replace_existing
+      c.innerHTML = ''
     if typeof new_content == 'string'
-      c.innerHTML = new_content
+      c.innerHTML = c.innerHTML + new_content
     else
       c.appendChild new_content
+
+  updateHeader: (new_header, replace_existing = true) ->
+    c = @m.querySelector '.simple-modal-title'
+    if replace_existing
+      c.innerHTML = ''
+    if typeof new_header == 'string'
+      c.innerHTML = c.innerHTML + new_header
+    else
+      c.appendChild new_header
 
   deconstruct: ->
     @m.parentNode.removeChild @m
