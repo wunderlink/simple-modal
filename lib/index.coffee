@@ -123,3 +123,6 @@ class ModalStyle
 
   show: ->
     @m.style.display = 'block'
+
+  hide: ->
+    @m.style.display = 'none'
