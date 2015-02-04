@@ -26,9 +26,10 @@ class ModalStyle
       clickOutsideToClose: true
       removeOnClose: true
       attachToBody: true
-      width: 0
+      width: '0px'
       minWidth: '560px'
       maxHeight: 0
+      minHeight: '0px'
 
     buttonDefaults =
       closeOnClick: true
@@ -54,17 +55,19 @@ class ModalStyle
     @updateContent @opts.content
 
     body = @m.querySelector '.simple-modal-body'
+    content = @m.querySelector '.simple-modal-content'
     if @opts.width
       body.style.width = @opts.width
     if @opts.minWidth
       body.style.minWidth = @opts.minWidth
 
-    content = @m.querySelector '.simple-modal-content'
     if @opts.maxHeight > 0
       content.style.maxHeight = @opts.maxHeight+"px"
     else
       maxHeight = window.innerHeight * .7
       content.style.maxHeight = maxHeight+"px"
+    if @opts.minHeight
+      content.style.minHeight = @opts.minHeight
 
   
     controls = @m.querySelectorAll '.simple-modal-controls>button'
