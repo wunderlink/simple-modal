@@ -118,17 +118,21 @@ class ModalStyle
       c.appendChild new_header
 
   deconstruct: ->
-    @m.parentNode.removeChild @m
-    @m = null
+    if @m
+      @m.parentNode.removeChild @m
+      @m = null
 
   close: ->
-    if @opts.removeOnClose
-      @deconstruct()
-    else
-      @m.style.display = 'none'
+    if @m
+      if @opts.removeOnClose
+        @deconstruct()
+      else
+        @m.style.display = 'none'
 
   show: ->
-    @m.style.display = 'block'
+    if @m
+      @m.style.display = 'block'
 
   hide: ->
-    @m.style.display = 'none'
+    if @m
+      @m.style.display = 'none'
