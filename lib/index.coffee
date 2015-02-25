@@ -25,6 +25,7 @@ class ModalStyle
       ]
       clickOutsideToClose: true
       removeOnClose: true
+      onClose: ->
       attachToBody: true
       width: '0px'
       minWidth: '560px'
@@ -124,6 +125,7 @@ class ModalStyle
 
   close: ->
     if @m
+      @opts.onClose()
       if @opts.removeOnClose
         @deconstruct()
       else
