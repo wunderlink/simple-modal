@@ -12,6 +12,7 @@ template = require './modal.jade'
 class ModalStyle
   constructor: (o) ->
     @m = {}
+    @last = null
     @opts =
       title: ''
       content: 'What would you like to do?'
@@ -24,6 +25,7 @@ class ModalStyle
         closeOnClick: true
       ]
       clickOutsideToClose: true
+      hideOtherModals: true
       removeOnClose: true
       onClose: ->
       attachToBody: true
@@ -124,6 +126,8 @@ class ModalStyle
       @m = null
 
   close: ->
+    if @hideOtherModals and @last
+      @last.style.display = 'block'
     if @m
       @opts.onClose()
       if @opts.removeOnClose
@@ -132,9 +136,17 @@ class ModalStyle
         @m.style.display = 'none'
 
   show: ->
+    if @hideOtherModals
+      others = document.body.querySelectorAll '.simple-modal-holder'
+      for other in others
+        if other.style.display is 'block'
+          @last = other
+        other.style.display = 'none'
     if @m
       @m.style.display = 'block'
 
   hide: ->
+    if @hideOtherModals and @last
+      @last.style.display = 'block'
     if @m
       @m.style.display = 'none'
