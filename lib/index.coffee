@@ -126,7 +126,7 @@ class ModalStyle
       @m = null
 
   close: ->
-    if @hideOtherModals and @last
+    if @opts.hideOtherModals and @last
       @last.style.display = 'block'
     if @m
       @opts.onClose()
@@ -136,7 +136,7 @@ class ModalStyle
         @m.style.display = 'none'
 
   show: ->
-    if @hideOtherModals
+    if @opts.hideOtherModals
       others = document.body.querySelectorAll '.simple-modal-holder'
       for other in others
         if other.style.display is 'block'
@@ -146,7 +146,7 @@ class ModalStyle
       @m.style.display = 'block'
 
   hide: ->
-    if @hideOtherModals and @last
+    if @opts.hideOtherModals and @last
       @last.style.display = 'block'
     if @m
       @m.style.display = 'none'
