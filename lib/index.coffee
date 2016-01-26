@@ -67,7 +67,7 @@ class ModalStyle
     if @opts.maxHeight > 0
       content.style.maxHeight = @opts.maxHeight+"px"
     else
-      maxHeight = window.innerHeight * .7
+      maxHeight = Math.floor(window.innerHeight * .7)
       content.style.maxHeight = maxHeight+"px"
     if @opts.minHeight
       content.style.minHeight = @opts.minHeight
