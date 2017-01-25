@@ -1,6 +1,6 @@
 {
   "name": "simple-modal",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "A basic modal with no hidden dependencies",
   "main": "index.js",
   "scripts": {
